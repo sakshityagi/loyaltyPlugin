@@ -110,7 +110,7 @@
           }
           var data = newObj;
           data.appId =  'b036ab75-9ddd-11e5-88d3-124798dea82d';
-          data.loyaltyUnqiueId = buildfire.context.instanceId;
+          data.loyaltyUnqiueId = '1449845962759-048417491372674704';
           data.userToken = ContentReward.currentLoggedInUser.userToken;
           data.auth = ContentReward.currentLoggedInUser.auth;
            var success = function (result) {
@@ -143,7 +143,7 @@
           updateMasterItem(newObj);
           var data = newObj;
           data.appId =  'b036ab75-9ddd-11e5-88d3-124798dea82d';
-          data.loyaltyUnqiueId = buildfire.context.instanceId;
+          data.loyaltyUnqiueId = '1449845962759-048417491372674704';
           data.userToken = ContentReward.currentLoggedInUser.userToken;
           data.auth = ContentReward.currentLoggedInUser.auth;
            buildfire.messaging.sendMessageToWidget({

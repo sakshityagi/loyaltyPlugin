@@ -8,7 +8,7 @@
         var ContentHome = this;
         var _data = {
           redemptionPasscode: '12345',
-          unqiueId: buildfire.context.instanceId,
+          unqiueId: '1449845962759-048417491372674704',
           externalAppId: 'b036ab75-9ddd-11e5-88d3-124798dea82d',
           appId: 'b036ab75-9ddd-11e5-88d3-124798dea82d',
           name: buildfire.context.pluginId,
@@ -80,7 +80,7 @@
             });
             var data = {
               appId: 'b036ab75-9ddd-11e5-88d3-124798dea82d',
-              loyaltyUnqiueId: buildfire.context.instanceId,
+              loyaltyUnqiueId: '1449845962759-048417491372674704',
               loyaltyRewardIds: rewardsId,
               userToken: ContentHome.currentLoggedInUser.userToken,
               auth: ContentHome.currentLoggedInUser.auth
@@ -140,8 +140,8 @@
               if (tmrDelay)clearTimeout(tmrDelay);
             }
           };
-          LoyaltyAPI.getRewards(buildfire.context.instanceId).then(ContentHome.successloyaltyRewards, ContentHome.errorloyaltyRewards);
-          LoyaltyAPI.getApplication(buildfire.context.instanceId).then(ContentHome.success, ContentHome.error);
+          LoyaltyAPI.getRewards('1449845962759-048417491372674704').then(ContentHome.successloyaltyRewards, ContentHome.errorloyaltyRewards);
+          LoyaltyAPI.getApplication('1449845962759-048417491372674704').then(ContentHome.success, ContentHome.error);
         };
 
 

@@ -38,14 +38,14 @@
                 WidgetRedeem.dailyLimitExceeded = false;
               }, 3000);
             } else {
-              WidgetRedeem.redeemFail = true;
-              $timeout(function () {
-                WidgetRedeem.redeemFail = false;
-              }, 3000);
+              $rootScope.$broadcast('POINTS_REDEEMED', WidgetRedeem.reward.pointsToRedeem);
+              ViewStack.push({
+                template: 'Success'
+              });
             }
           };
           Buildfire.spinner.show();
-          LoyaltyAPI.redeemPoints('5317c378a6611c6009000001', WidgetRedeem.currentLoggedInUser.userToken, '1449814143554-01452660677023232', rewardId).then(redeemSuccess, redeemFailure);
+          LoyaltyAPI.redeemPoints('5317c378a6611c6009000001', WidgetRedeem.currentLoggedInUser.userToken, '1449845962759-048417491372674704', rewardId).then(redeemSuccess, redeemFailure);
         };
 
         /**

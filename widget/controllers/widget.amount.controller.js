@@ -24,6 +24,9 @@
          * Method to check if user has exceeded the total points limit.
          */
         WidgetAmount.confirmCode = function () {
+          console.log(">>>>>>>>>>>>", currentView.loyaltyPoints);
+          console.log(">>>>>>>>>>>>", WidgetAmount.amount);
+          console.log(">>>>>>>>>>>>", WidgetAmount.application.totalPoints);
           var calculatedPoints = (WidgetAmount.amount * WidgetAmount.application.pointsPerDollar) + WidgetAmount.application.pointsPerVisit + currentView.loyaltyPoints;
           if (WidgetAmount.application.totalPoints <= calculatedPoints) {
             WidgetAmount.totalLimitExceeded = true;

@@ -42,6 +42,7 @@
          * Method to fetch logged in user's loyalty points
          */
         WidgetHome.getLoyaltyPoints = function (userId) {
+          WidgetHome.loyaltyPoints = 1000;
           var success = function (result) {
               console.info('Points>>>>>>>>>>>>>>>.', result);
               WidgetHome.loyaltyPoints = result.totalPoints;
@@ -51,7 +52,7 @@
                 console.error('Error while getting points data', err);
               }
             };
-          LoyaltyAPI.getLoyaltyPoints(userId, WidgetHome.currentLoggedInUser.userToken, '1449814143554-01452660677023232').then(success, error);
+         // LoyaltyAPI.getLoyaltyPoints(userId, WidgetHome.currentLoggedInUser.userToken, '1449845962759-048417491372674704').then(success, error);
         };
 
         /**
@@ -81,8 +82,8 @@
           };
 
           console.log("$$$$$$$$$$$$$$$$$$$$$$$", buildfire.context);
-          LoyaltyAPI.getApplication('1449814143554-01452660677023232').then(successApplication, errorApplication);
-          LoyaltyAPI.getRewards('1449814143554-01452660677023232').then(successLoyaltyRewards, errorLoyaltyRewards);
+          LoyaltyAPI.getApplication('1449845962759-048417491372674704').then(successApplication, errorApplication);
+          LoyaltyAPI.getRewards('1449845962759-048417491372674704').then(successLoyaltyRewards, errorLoyaltyRewards);
         };
 
         /**
@@ -270,7 +271,7 @@
           console.log("_______________________", user);
           if (user) {
             WidgetHome.currentLoggedInUser = user;
-            WidgetHome.getLoyaltyPoints('5317c378a6611c6009000001');
+            WidgetHome.getLoyaltyPoints('557c6567c8faa5ec0f003728');
             $scope.$digest();
           }
         });

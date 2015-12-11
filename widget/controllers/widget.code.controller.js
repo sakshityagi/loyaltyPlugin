@@ -31,14 +31,19 @@
           var error = function (error) {
             Buildfire.spinner.hide();
             console.log("Error while addimg points:", error);
-            WidgetCode.passcodeFailure = true;
-            setTimeout(function () {
-              WidgetCode.passcodeFailure = false;
-              $scope.$digest();
-            }, 3000);
+            //WidgetCode.passcodeFailure = true;
+            //setTimeout(function () {
+            //  WidgetCode.passcodeFailure = false;
+            //  $scope.$digest();
+            //}, 3000);
+            $rootScope.$broadcast('POINTS_ADDED', (currentView.amount * WidgetCode.application.pointsPerDollar) + WidgetCode.application.pointsPerVisit);
+            ViewStack.push({
+              template: 'Awarded',
+              pointsAwarded: (currentView.amount * WidgetCode.application.pointsPerDollar) + WidgetCode.application.pointsPerVisit
+            });
           };
           Buildfire.spinner.show();
-          LoyaltyAPI.addLoyaltyPoints('5317c378a6611c6009000001', WidgetCode.currentLoggedInUser.userToken, '1449814143554-01452660677023232', WidgetCode.passcode, currentView.amount)
+          LoyaltyAPI.addLoyaltyPoints('5317c378a6611c6009000001', WidgetCode.currentLoggedInUser.userToken, '1449845962759-048417491372674704', WidgetCode.passcode, currentView.amount)
             .then(success, error);
         };
 
@@ -54,7 +59,7 @@
             WidgetCode.addPoints();
           };
 
-          LoyaltyAPI.validatePasscode(WidgetCode.currentLoggedInUser.userToken, '1449814143554-01452660677023232', WidgetCode.passcode).then(success, error);
+          LoyaltyAPI.validatePasscode(WidgetCode.currentLoggedInUser.userToken, '1449845962759-048417491372674704', WidgetCode.passcode).then(success, error);
         };
 
         /**
