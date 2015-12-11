@@ -11,7 +11,7 @@
           unqiueId: '1449845962759-048417491372674704',
           externalAppId: 'b036ab75-9ddd-11e5-88d3-124798dea82d',
           appId: 'b036ab75-9ddd-11e5-88d3-124798dea82d',
-          name: buildfire.context.pluginId,
+          name: 'loyaltyPlugin',
           pointsPerVisit: 1,
           pointsPerDollar: 1,
           totalLimit: 5000,
